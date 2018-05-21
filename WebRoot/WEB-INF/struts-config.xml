@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<data-sources> 
+ 		<data-source type="org.apache.commons.dbcp.BasicDataSource"> 
+			<set-property property="driverClassName" 
+ 				value="com.mysql.jdbc.Driver" /> 
+			<set-property property="url" 
+				value="jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8" /> 
+			<set-property property="username" value="root" /> 
+ 			<set-property property="password" value="157123" /> 
+ 		</data-source> 
+ </data-sources> 
+	<form-beans>
+		<form-bean name="userForm" type="bean.User" />
+		<form-bean name="noticeForm" type="bean.Notice"/>
+	</form-beans>
+
+	<action-mappings>
+		<action attribute="UserForm" 
+				input="/index.jsp"
+				name="userForm" 
+				path="/login" 
+				scope="request"
+			    type="controller.ComAction">
+			<forward name="success" path="/a_main.jsp" redirect="true" />
+			<forward name="fail" path="/index.jsp"  />
+			<forward name="check" path="/a_check_my_info.jsp"/>
+			<forward name="check1" path="/login.do?action=check"/>
+			<forward name="check2" path="/add_admin.jsp"/>
+			
+		</action>
+	
+	    <action 
+				input="/a_notice.jsp"
+				name="noticeForm" 
+				path="/notice" 
+				scope="request"
+			    type="controller.NoticeAction">
+			<forward name="success" path="/a_notice.jsp" redirect="true" />
+			<forward name="fail" path="a_right.jsp" redirect="true" />
+			<forward name="show" path="/a_delete_notice.jsp"  />
+			<forward name="dshow" path="/notice.do?action=check" redirect="true" />
+			
+		</action>
+		
+		 <action 				
+				name="personForm" 
+				path="/person" 
+				scope="request"
+			    type="controller.PersonAction">
+			<forward name="success" path="/a_check_user_info.jsp"/>
+			<forward name="show" path="/person.do?action=check" redirect="true" />
+		
+		</action>
+		
+			 <action 				
+				name="topicForm" 
+				path="/topic" 
+				scope="request"
+			    type="controller.TopicAction">
+			<forward name="success" path="/a_check_topic.jsp"/>
+			<forward name="show" path="/topic.do?action=check" redirect="true" />
+		
+		</action>
+		
+		<action 				
+				name="advForm" 
+				path="/advertisement" 
+				scope="request"
+			    type="controller.AdvAction">
+			<forward name="success" path="/add_advertisement.jsp"/>
+			<forward name="showAdv" path="/check_advertisement.jsp"/>
+			<forward name="showagain" path="/advertisement.do?action=check" redirect="true" />
+		
+		</action>
+	</action-mappings>
+
+
+</struts-config>
+

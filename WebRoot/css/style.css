@@ -1,0 +1,41 @@
+.info input{
+color:blue;
+
+}
+.aaa{
+    margin-left: 600px;
+    margin-top: 70px;
+}
+.bbb{
+	margin-left:198px;
+}
+.ccc{
+	margin-left:200px;
+	margin-top:-35px;
+}
+.ddd{
+	
+    margin-top: 161px;   
+}
+body{
+		background:picture/111.jpg;
+		background-size:100% 100%;
+		overflow:hidden;
+	}
+.fff{
+	margin-top:0px;
+}
+.name{
+	    margin-top: 137px;
+}
+.login{
+	    float: left;
+    margin-left: 587px;
+}
+.cancel{
+	float: left;
+    margin-left: 43px;
+}
+.all{
+	    MARGIN-TOP: 9px;
+}
